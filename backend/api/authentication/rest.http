@@ -1,0 +1,42 @@
+@base_url = http://localhost:8000/api/
+
+### Login
+POST {{base_url}}auth/token/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+
+### getPerfiles
+GET {{base_url}}auth/perfiles/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getPerfilesById
+GET {{base_url}}auth/perfiles/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postPerfil
+POST {{base_url}}auth/perfiles/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "user": 1
+}
+
+
+### updatePerfiles
+PATCH {{base_url}}auth/perfiles/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "biografia": "me gustan las patatas"
+}
