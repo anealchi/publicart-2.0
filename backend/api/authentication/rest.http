@@ -1,4 +1,4 @@
-@base_url = http://localhost:8000/api/
+@base_url = http://localhost:8001/api/
 
 ### Login
 POST {{base_url}}auth/token/ HTTP/1.1
