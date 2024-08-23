@@ -16,3 +16,15 @@ Para realizar las pruebas de las consultas usar los ficheros **.http** con la ex
 <br>
 Pulsar sobre **Send Request** para enviar la consulta
 ![Imagen REST Client](imgs/readme/image-1.png)
+
+# Implementar
+- Endpoints:
+    - ~~AUTHENTICATION~~
+    - ~~OBRA~~
+    - ~~PUBLICACION~~
+    - INTERACCION
+    - TRANSACCION
+- ~~Lógica login de usuarios~~
+- Lógica registro de usuarios
+- Mirar donde alojar la base de datos
+- Cómo implementar GRUPOS
