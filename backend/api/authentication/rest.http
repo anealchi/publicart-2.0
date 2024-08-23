@@ -40,3 +40,9 @@ withCredentials: true
 {
     "biografia": "me gustan las patatas"
 }
+
+
+### deletePerfil
+DELETE {{base_url}}auth/perfiles/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true
