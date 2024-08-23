@@ -15,4 +15,5 @@ urlpatterns = [
     path('api/', include('authentication.urls')),
     path('api/', include('obra.urls')),
     path('api/', include('publicacion.urls')),
+    path('api/', include('interaccion.urls')),
 ]

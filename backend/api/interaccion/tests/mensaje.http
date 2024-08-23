@@ -1,0 +1,49 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getMensajes
+GET {{base_url}}interacciones/mensajes/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getMensajeById
+GET {{base_url}}interacciones/mensajes/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postMensaje
+POST {{base_url}}interacciones/mensajes/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "chat": 1,
+    "autor": 1,
+    "texto": "hola"
+}
+
+
+### updateMensaje
+PATCH {{base_url}}interacciones/mensajes/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "texto": "hola caracola"
+}
+
+
+### deleteMensaje
+DELETE {{base_url}}interacciones/mensajes/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

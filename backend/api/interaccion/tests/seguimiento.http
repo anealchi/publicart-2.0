@@ -1,0 +1,48 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getSeguimientos
+GET {{base_url}}interacciones/seguimientos/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getSeguimientoById
+GET {{base_url}}interacciones/seguimientos/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postSeguimiento
+POST {{base_url}}interacciones/seguimientos/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "seguidor": 1,
+    "seguido": 2
+}
+
+
+### updateSeguimiento
+PATCH {{base_url}}interacciones/seguimientos/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "seguido": 3
+}
+
+
+### deleteSeguimiento
+DELETE {{base_url}}interacciones/seguimientos/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

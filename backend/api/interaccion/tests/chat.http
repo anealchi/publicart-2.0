@@ -1,0 +1,48 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getChats
+GET {{base_url}}interacciones/chats/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getChatById
+GET {{base_url}}interacciones/chats/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postChat
+POST {{base_url}}interacciones/chats/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "perfil1": 1,
+    "perfil2": 2
+}
+
+
+### updateChat
+PATCH {{base_url}}interacciones/chats/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "perfil2": 3
+}
+
+
+### deleteChat
+DELETE {{base_url}}interacciones/chats/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

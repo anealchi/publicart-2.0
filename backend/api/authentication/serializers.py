@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from drf_extra_fields.fields import HybridImageField
 from .models import Perfil, Usuario
+from interaccion.models import Seguimiento
 
 
 class UsuarioSerializer(serializers.ModelSerializer):
@@ -42,6 +43,15 @@ class PerfilSerializer(serializers.ModelSerializer):
         represent_in_base64=True
     )
 
+    num_seguidores = serializers.SerializerMethodField()
+    num_seguidos = serializers.SerializerMethodField()
+
     class Meta:
         model = Perfil
         fields = '__all__'
+
+    def get_num_seguidores(self, obj):
+        return Seguimiento.objects.filter(seguido=obj).count()
+
+    def get_num_seguidos(self, obj):
+        return Seguimiento.objects.filter(seguidor=obj).count()
