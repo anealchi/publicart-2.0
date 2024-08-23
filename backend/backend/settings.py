@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'authentication',
     'obra',
     'publicacion',
-    'interaccion'
+    'interaccion',
+    'transaccion'
 ]
 
 MIDDLEWARE = [
@@ -57,15 +58,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
-
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
-    )
-}
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [

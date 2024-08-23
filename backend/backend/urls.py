@@ -16,4 +16,5 @@ urlpatterns = [
     path('api/', include('obra.urls')),
     path('api/', include('publicacion.urls')),
     path('api/', include('interaccion.urls')),
+    path('api/', include('transaccion.urls')),
 ]

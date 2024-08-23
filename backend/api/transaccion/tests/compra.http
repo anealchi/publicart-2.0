@@ -1,0 +1,48 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getCompras
+GET {{base_url}}transacciones/compras/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getCompraById
+GET {{base_url}}transacciones/compras/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postCompra
+POST {{base_url}}transacciones/compras/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "comprador": 1,
+    "obra": 1
+}
+
+
+### updateCompra
+PATCH {{base_url}}transacciones/compras/2/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "comprador": 2
+}
+
+
+### deleteCompra
+DELETE {{base_url}}transacciones/compras/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true
