@@ -21,6 +21,13 @@ class TecnicaSerializer(serializers.ModelSerializer):
 
 
 class FotoSerializer(serializers.ModelSerializer):
+    foto = HybridImageField(
+        max_length=None,
+        required=True,
+        allow_null=False,
+        represent_in_base64=True
+    )
+
     class Meta:
         model = Foto
         fields = '__all__'
