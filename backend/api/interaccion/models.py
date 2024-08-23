@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from authentication.models import Perfil
 
@@ -28,23 +29,27 @@ class Seguimiento(models.Model):
 
 
 class Chat(models.Model):
-    perfil1 = models.ForeignKey(
+    nombre = models.CharField(max_length=100, blank=True)
+    participantes = models.ManyToManyField(
         Perfil,
-        on_delete=models.PROTECT,
-        blank=False,
-        null=False,
-        related_name='chats1'
+        related_name='chats'
     )
-    perfil2 = models.ForeignKey(
-        Perfil,
-        on_delete=models.PROTECT,
-        blank=False,
-        null=False,
-        related_name='chats2'
-    )
+    creacion = models.DateTimeField(auto_now_add=True)
+
+    def clean(self):
+        super().clean()
+        if self.pk and self.participantes.count() < 2:
+            raise ValidationError('Un chat debe tener al menos dos participantes')
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
 
     def __str__(self) -> str:
-        return f"{self.perfil1} - {self.perfil2}"
+        if self.nombre:
+            return self.nombre
+
+        return f"Chat con {', '.join([str(p) for p in self.participantes.all()])}"
 
     class Meta:
         verbose_name_plural = 'Chats'

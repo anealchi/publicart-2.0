@@ -27,8 +27,8 @@ content-type: application/json
 withCredentials: true
 
 {
-    "perfil1": 1,
-    "perfil2": 2
+    "nombre": "ejemplo",
+    "participantes": [1, 2]
 }
 
 
