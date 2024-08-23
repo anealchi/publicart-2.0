@@ -1,0 +1,49 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getComentarios
+GET {{base_url}}publicaciones/comentarios/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getComentarioById
+GET {{base_url}}publicaciones/comentarios/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postComentario
+POST {{base_url}}publicaciones/comentarios/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "perfil": 1,
+    "publicacion": 1,
+    "texto": "COMENTARIO 01"
+}
+
+
+### updateComentario
+PATCH {{base_url}}publicaciones/comentarios/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "texto": "COMENTARIO PUBLICACION 01"
+}
+
+
+### deleteComentario
+DELETE {{base_url}}publicaciones/comentarios/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

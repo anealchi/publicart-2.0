@@ -1,0 +1,49 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getObras
+GET {{base_url}}obras/obras/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getObraById
+GET {{base_url}}obras/obras/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postObra
+POST {{base_url}}obras/obras/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "descripcion": "OBRA 01",
+    "estilo": 1,
+    "tecnica": 1
+}
+
+
+### updateObra
+PATCH {{base_url}}obras/obras/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "descripcion": "OBRA 02"
+}
+
+
+### deleteObra
+DELETE {{base_url}}obras/obras/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

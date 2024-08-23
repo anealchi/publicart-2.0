@@ -1,0 +1,47 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getEstilos
+GET {{base_url}}obras/estilos/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getEstilosById
+GET {{base_url}}obras/estilos/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postEstilo
+POST {{base_url}}obras/estilos/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "descripcion": "Cubísmo"
+}
+
+
+### updateEstilo
+PATCH {{base_url}}obras/estilos/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "descripcion": "Impresionismo"
+}
+
+
+### deleteEstilo
+DELETE {{base_url}}obras/estilos/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

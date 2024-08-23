@@ -1,0 +1,48 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getLikes
+GET {{base_url}}publicaciones/likes/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getLikeById
+GET {{base_url}}publicaciones/likes/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postLike
+POST {{base_url}}publicaciones/likes/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "perfil": 1,
+    "publicacion": 1
+}
+
+
+### updateLike
+PATCH {{base_url}}publicaciones/likes/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "publicacion": 1
+}
+
+
+### deleteLike
+DELETE {{base_url}}publicaciones/likes/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

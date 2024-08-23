@@ -1,0 +1,48 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getFotos
+GET {{base_url}}obras/fotos/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getFotosById
+GET {{base_url}}obras/fotos/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postFoto
+POST {{base_url}}obras/fotos/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "foto": "...",
+    "obra": 1
+}
+
+
+### updateFoto
+PATCH {{base_url}}obras/fotos/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "foto": "..."
+}
+
+
+### deleteFoto
+DELETE {{base_url}}obras/fotos/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

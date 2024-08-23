@@ -1,0 +1,48 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getPublicaciones
+GET {{base_url}}publicaciones/publicaciones/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getPublicacionById
+GET {{base_url}}publicaciones/publicaciones/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postPublicacion
+POST {{base_url}}publicaciones/publicaciones/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "obra": 1,
+    "perfil": 1
+}
+
+
+### updatePublicacion
+PATCH {{base_url}}publicaciones/publicaciones/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "obra": 2
+}
+
+
+### deletePublicacion
+DELETE {{base_url}}publicaciones/publicaciones/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

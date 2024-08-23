@@ -1,0 +1,47 @@
+@base_url = http://localhost:8001/api/
+
+### Login
+POST {{base_url}}auth/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "aneachi",
+    "password": "1234"
+}
+
+### getTecnicas
+GET {{base_url}}obras/tecnicas/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### getTecnicaById
+GET {{base_url}}obras/tecnicas/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### postTecnica
+POST {{base_url}}obras/tecnicas/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "descripcion": "Pintura"
+}
+
+
+### updateTecnica
+PATCH {{base_url}}obras/tecnicas/1/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+{
+    "descripcion": "Fotografía"
+}
+
+
+### deleteTecnica
+DELETE {{base_url}}obras/tecnicas/0/ HTTP/1.1
+content-type: application/json
+withCredentials: true

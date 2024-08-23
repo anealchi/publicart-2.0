@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'dj_rest_auth',
     'rest_framework_simplejwt.token_blacklist',
-    'authentication'
+    'authentication',
+    'obra',
+    'publicacion'
 ]
 
 MIDDLEWARE = [

@@ -12,5 +12,7 @@ urlpatterns = [
     path('api/auth/', include('dj_rest_auth.urls')),
     path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/', include('authentication.urls'))
+    path('api/', include('authentication.urls')),
+    path('api/', include('obra.urls')),
+    path('api/', include('publicacion.urls')),
 ]
