@@ -34,6 +34,13 @@ class Chat(models.Model):
         Perfil,
         related_name='chats'
     )
+    creador = models.ForeignKey(
+        Perfil,
+        on_delete=models.PROTECT,
+        blank=False,
+        null=False
+    )
+    difusion = models.BooleanField(default=False)
     creacion = models.DateTimeField(auto_now_add=True)
 
     def clean(self):
@@ -71,6 +78,15 @@ class Mensaje(models.Model):
     texto = models.CharField(max_length=500)
     fecha_mensaje = models.DateTimeField(auto_now_add=True)
     leido = models.BooleanField(default=False)
+
+    def clean(self) -> None:
+        super().clean()
+        if self.chat.difusion and self.autor != self.chat.creador:
+            raise ValidationError('Solo el creador del grupo de difusión puede enviar mensajes')
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
 
     def __str__(self) -> str:
         return f"{self.autor}: {self.texto}"

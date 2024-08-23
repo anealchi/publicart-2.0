@@ -27,7 +27,7 @@ content-type: application/json
 withCredentials: true
 
 {
-    "chat": 1,
+    "chat": 3,
     "autor": 1,
     "texto": "hola"
 }

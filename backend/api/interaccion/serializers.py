@@ -17,6 +17,15 @@ class MensajeSerializer(serializers.ModelSerializer):
         model = Mensaje
         fields = '__all__'
 
+    def validate(self, attrs):
+        chat = attrs['chat']
+        autor = attrs['autor']
+
+        if chat.difusion and autor != chat.creador:
+            raise serializers.ValidationError('Solo el creador del grupo de difusión puede enviar mensaje')
+
+        return attrs
+
 
 class ChatSerializer(serializers.ModelSerializer):
     class Meta:
