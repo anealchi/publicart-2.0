@@ -27,7 +27,7 @@ class Usuario(AbstractUser):
 class Perfil(models.Model):
     usuario = models.OneToOneField(
         Usuario,
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name='perfil',
         blank=False,
         null=True

@@ -27,7 +27,7 @@ content-type: application/json
 withCredentials: true
 
 {
-    "descripcion": "Pintura"
+    "descripcion": "v"
 }
 
 

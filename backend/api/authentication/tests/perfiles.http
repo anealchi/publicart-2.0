@@ -10,6 +10,26 @@ content-type: application/json
 }
 
 
+### getUsuarios
+GET {{base_url}}auth/usuarios/ HTTP/1.1
+content-type: application/json
+withCredentials: true
+
+
+### register
+POST {{base_url}}auth/usuarios/ HTTP/1.1
+Content-Type: application/json
+withCredentials: true
+
+{
+    "username": "nuevo_usuario",
+    "password": "password_seguro",
+    "first_name": "Nombre",
+    "last_name": "Apellido",
+    "email": "email@example.com"
+}
+
+
 ### getPerfiles
 GET {{base_url}}auth/perfiles/ HTTP/1.1
 content-type: application/json
