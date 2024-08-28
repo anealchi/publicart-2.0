@@ -22,9 +22,9 @@ Pulsar sobre **Send Request** para enviar la consulta
     - ~~AUTHENTICATION~~
     - ~~OBRA~~
     - ~~PUBLICACION~~
-    - INTERACCION
-    - TRANSACCION
+    - ~~INTERACCION~~
+    - ~~TRANSACCION~~
 - ~~Lógica login de usuarios~~
-- Lógica registro de usuarios
+- ~~Lógica registro de usuarios~~
 - Mirar donde alojar la base de datos
-- Cómo implementar GRUPOS
+- ~~Cómo implementar GRUPOS~~
