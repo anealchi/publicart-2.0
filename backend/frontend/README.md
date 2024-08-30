@@ -27,3 +27,15 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+## Dependencias instaladas
+### Bootstrap
+```sh
+npm install bootstrap
+```
+
+### Axios
+```sh
+npm install axios
+```
