@@ -22,7 +22,7 @@ export const useUserStore = defineStore(
                 is_authenticated.value = true
                 user.value = response.user
 
-                const { data: responseUsuarios } = await apiPrivate.get('auth/usuarios/' + user.value.id + '/')
+                const { data: responseUsuarios } = await apiPrivate.get('auth/usuarios/' + user.value.pk + '/')
                 profile.value = responseUsuarios.perfil
                 is_superuser.value = responseUsuarios.is_superuser
                 is_staff.value = responseUsuarios.is_staff
