@@ -2,6 +2,7 @@ import { ref, resolveComponent } from 'vue'
 import { defineStore } from 'pinia'
 import api from '../../../core/utils/axios'
 import apiPrivate from '../../../core/utils/axiosPrivate'
+import router from '@/core/router'
 
 export const useUserStore = defineStore(
     'userStore',
@@ -26,6 +27,7 @@ export const useUserStore = defineStore(
                 profile.value = responseUsuarios.perfil
                 is_superuser.value = responseUsuarios.is_superuser
                 is_staff.value = responseUsuarios.is_staff
+                router.push({ name: 'perfil' })
             } catch (error) {
                 console.log(error)
             }

@@ -39,3 +39,16 @@ npm install bootstrap
 ```sh
 npm install axios
 ```
+
+
+## Cosas que hacer
+- Mostrar error al hacer login incorrectamente
+- Poder acceder a registro sin iniciar sesión
+- Mostrar vistas como una página entera en lugar de extensión de App.vue
+- Diseñar side-nav
+- Diseñar páginas:
+    - Principal
+    - Perfil
+    - Chats
+    - Conversaciones
+    - Explorar -> añadir barra búsqueda
