@@ -13,11 +13,14 @@
   </header>
 
   <RouterView />
+
+  <FooterComponent/>
 </template>
 
 <script setup>
   import { RouterLink, RouterView } from 'vue-router'
   import Bienvenida from './components/Bienvenida.vue'
+  import FooterComponent from './components/FooterComponent.vue'
 </script>
 
 <style scoped>
