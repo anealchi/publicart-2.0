@@ -40,6 +40,11 @@ npm install bootstrap
 npm install axios
 ```
 
+### Vuetify
+```sh
+npm install vuetify
+```
+
 
 ## Cosas que hacer
 - Mostrar error al hacer login incorrectamente
