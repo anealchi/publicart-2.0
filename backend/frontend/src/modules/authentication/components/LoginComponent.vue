@@ -3,6 +3,11 @@
         <form @submit.prevent="onSubmit">
             <h1 class="h1 mb-3 fw-normal">Inicio de sesión</h1>
 
+            <!-- Mensaje de error -->
+            <div v-if="errorMessage" class="alert alert-danger" role="alert">
+                {{ errorMessage }}
+            </div>
+
             <div class="form-floating">
             <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" v-model="username">
             <label for="floatingInput">Nombre de usuario</label>
@@ -29,10 +34,20 @@
 
     const username = ref('')
     const password = ref('')
+    const errorMessage = ref('')
 
     const userStore = useUserStore()
 
-    function onSubmit() {
-        userStore.login(username.value, password.value)
+    async function onSubmit() {
+        if (!username.value || !password.value) {
+            errorMessage.value = 'Por favor, ingrese el nombre de usuario y contraseña'
+            return
+        }
+
+        let response = await userStore.login(username.value, password.value)
+        console.log(response)
+        if (response) {
+            errorMessage.value = response   
+        }
     }
 </script>

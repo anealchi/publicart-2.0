@@ -30,6 +30,7 @@ export const useUserStore = defineStore(
                 router.push({ name: 'perfil' })
             } catch (error) {
                 console.log(error)
+                return 'Fallo al intentar iniciar sesión, inténtelo de nuevo'
             }
         }
 

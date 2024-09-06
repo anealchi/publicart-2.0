@@ -1,26 +1,11 @@
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo_flor_publicart.png" width="200" height="200" />
-
-    <div class="wrapper">
-      <Bienvenida msg="PublicArt 2.0" />
-
-      <nav>
-        <RouterLink to="/">Inicio de sesión</RouterLink>
-        <RouterLink to="/registro">Registro</RouterLink>
-      </nav>
-    </div>
-  </header>
 
   <RouterView />
 
-  <FooterComponent/>
 </template>
 
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router'
-  import Bienvenida from './components/Bienvenida.vue'
-  import FooterComponent from './components/FooterComponent.vue'
+  import { RouterView } from 'vue-router'
 </script>
 
 <style scoped>
