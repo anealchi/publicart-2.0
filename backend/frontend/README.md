@@ -47,9 +47,9 @@ npm install vuetify
 
 
 ## Cosas que hacer
-- Mostrar error al hacer login incorrectamente
-- Poder acceder a registro sin iniciar sesión
-- Mostrar vistas como una página entera en lugar de extensión de App.vue
+- ~~Mostrar error al hacer login incorrectamente~~
+- ~~Poder acceder a registro sin iniciar sesión~~
+- ~~Mostrar vistas como una página entera en lugar de extensión de App.vue~~
 - Diseñar side-nav
 - Diseñar páginas:
     - Principal
